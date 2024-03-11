@@ -1,0 +1,11 @@
+groups:
+- name: availability
+  rules: 
+    - alert: High Availability not respected
+      expr: max(kafka_controller_kafkacontroller_activebrokercount) < bool 3
+      for: 10s
+- name: reliability
+  rules: 
+    - alert: Serving HTTP 500 errors
+      expr: rate(http_requests_total{status="500"}[2m]) > 0
+  
