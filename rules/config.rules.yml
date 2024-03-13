@@ -12,15 +12,6 @@ groups:
       summary: "Instance {{ $labels.instance }} down"
       description: "{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 2 minutes."
 
-  - alert: high_load
-    expr: node_load1 > 0.5
-    for: 2m
-    labels:
-      severity: page
-    annotations:
-      summary: "Instance {{ $labels.instance }} under high load"
-      description: "{{ $labels.instance }} of job {{ $labels.job }} is under high load."
-
   - alert: high availability
     expr: count(kafka_server_replicamanager_leadercount) < 3
     for: 30s
