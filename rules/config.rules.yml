@@ -3,7 +3,7 @@ groups:
   rules:
 
   # Alert for any instance that is unreachable for >2 minutes.
-  - alert: service_down
+  - alert: TraefikIngressUnitIsUnavailable
     expr: up == 0
     for: 2m
     labels:
