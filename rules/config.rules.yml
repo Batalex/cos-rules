@@ -3,7 +3,7 @@ groups:
   rules:
 
   # Alert for any instance that is unreachable for >2 minutes.
-  - alert: TraefikIngressUnitIsUnavailable
+  - alert: UnitIsUnavailable
     expr: up == 0
     for: 2m
     labels:
@@ -13,5 +13,5 @@ groups:
       description: "{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 2 minutes."
 
   - alert: high availability
-    expr: count(kafka_server_replicamanager_leadercount) < 4
+    expr: count(kafka_server_replicamanager_leadercount) < 3
     for: 30s
