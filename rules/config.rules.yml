@@ -13,5 +13,5 @@ groups:
       description: "{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 2 minutes."
 
   - alert: high availability
-    expr: count(kafka_server_replicamanager_leadercount) < 3
+    expr: count(kafka_server_replicamanager_leadercount) < 4
     for: 30s
