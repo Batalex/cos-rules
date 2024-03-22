@@ -4534,7 +4534,7 @@
     ]
   },
   "timezone": "",
-  "title": "Kafka Metrics (job removed)",
+  "title": "Kafka Metrics (job removed from cos config)",
   "uid": "nojobid",
   "version": 10
 }
